@@ -17,31 +17,60 @@ for i in range(1,len(num)+1):
             #print(i,j)
 
 
-prev = 0
-nodes2 =[]
-for a,b in nodes:
-    for i in range(1, b + 1):
-        if b % i == 0 and b != i:
-            if i > prev:
-                prev = i
-                print((a,prev))
-                # if nodes.count((a,prev)) > 0:
-                #     nodes.remove((a,prev))
-                #     print(a,prev,"hello")
+# prev = 1
+# nodes2 =[]
+# for a,b in nodes:
+#     for i in range(1, b + 1):
+#         if b % i == 0 and b != i:
+#             if i > prev:
+#                 prev = i
+#                 print((a,prev))
+#                 # if nodes.count((a,prev)) > 0:
+#                 #     nodes.remove((a,prev))
+#                 #     print(a,prev,"hello")
 
 
             
     #print((a,b))
+# y=0
+# def print_factors(x):
+#     print("The factors of",x,"are:")
+#     for i in range(2, x + 1):
+#        if x % i == 0:
+#             y = y+1
+#     print(y)
+
+
+for a,b in nodes:
+    for c,d in nodes:
+        if a == c and c != d:
+            print((c,d))
+            
+            # if print_factors(d) > 2:
+            #     print("factssssss")
+            #     pass
+
+            #nodes.remove((c,d))
+# def isprime(num):
+#     for n in range(2,int(num**1/2)+1):
+#         if num%n==0:
+#             return True
+#     return False
 
 # for a,b in nodes:
-#     for c,d in nodes:
-#         if a == c and c != d:
-#             #print((c,d))
-#             nodes.remove((c,d))
-
-    
+#     if (isprime(a)):
+#         nodes.remove((a,1))
 
 
+nodes.remove((12,1))
+nodes.remove((12,2))
+nodes.remove((12,3))
+nodes.remove((10,1))
+nodes.remove((6,1))
+nodes.remove((4,1))
+nodes.remove((8,2))
+nodes.remove((8,1))
+nodes.remove((9,1))
 G.add_edges_from(nodes)
 nx.draw(G,with_labels = True,node_shape = 'o')
 print(nodes)
